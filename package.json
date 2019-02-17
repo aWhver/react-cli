@@ -1,0 +1,9 @@
+{
+  "name": "react-cli",
+  "version": "1.0.0",
+  "description": "webpackTry to build recat scaffolding to learn web apck",
+  "main": "index.js",
+  "repository": "https://github.com/aWhver/react-cli.git",
+  "author": "Inigo",
+  "license": "MIT"
+}
