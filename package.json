@@ -1,9 +1,22 @@
 {
   "name": "react-cli",
   "version": "1.0.0",
-  "description": "webpackTry to build recat scaffolding to learn web apck",
+  "description": "webpackTry to build react scaffolding to learn webpack",
   "main": "index.js",
   "repository": "https://github.com/aWhver/react-cli.git",
   "author": "Inigo",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config src/config/webpack.base-config.js"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-router": "^4.3.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.0"
+  }
 }
