@@ -12,9 +12,13 @@ import {
 } from "react-router-dom";
 import App from "./App";
 import './index.less';
+import sanye from './images/sanye1.png'
 
 function FirstName() {
-  return <div className="first-name">赵</div>;
+  return <div className="first-name">
+    <span>赵</span>
+    <img src={sanye} />
+  </div>;
 }
 
 function LastName() {
@@ -29,9 +33,9 @@ const Root = (
         return (
           <App {...props}>
             <Switch>
-              {/* <Redirect to="/firstname" /> */}
               <Route path="/firstname" component={FirstName} />
               <Route path="/lastname" component={LastName} />
+              <Redirect to="/firstname" />
             </Switch>
           </App>
         );

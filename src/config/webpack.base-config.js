@@ -34,6 +34,16 @@ const baseConfig = {
             loader: 'less-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|webp|gif|svg)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+            name: 'images/[name].[hash:8].[ext]'
+          }
+        }
       }
     ]
   },
