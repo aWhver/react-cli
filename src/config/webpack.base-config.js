@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 console.log("path.join(__dirname, '..', 'index.html')", path.join(__dirname, '..', 'index.html'));
+console.log(process)
 const baseConfig = {
   entry: {
     main: path.join(__dirname, '..', 'index.js')
@@ -9,6 +10,7 @@ const baseConfig = {
     filename: 'bundle.js',
     path: path.resolve(process.cwd(), 'dist/')
   },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
