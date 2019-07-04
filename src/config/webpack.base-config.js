@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 console.log("path.join(__dirname, '..', 'index.html')", path.join(__dirname, '..', 'index.html'));
-console.log(process)
+
 const baseConfig = {
   entry: {
     main: path.join(__dirname, '..', 'index.js')
