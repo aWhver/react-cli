@@ -1,10 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log("path.join(__dirname, '..', 'index.html')", path.join(__dirname, '..', 'index.html'));
+console.log(
+  "path.join(__dirname, '..', 'index.html')",
+  path.join(__dirname, '..', 'index.html')
+);
 
 const baseConfig = {
   entry: {
-    main: path.join(__dirname, '..', 'index.js')
+    main: path.join(__dirname, '..', 'index.tsx')
   },
   output: {
     filename: 'bundle.js',
@@ -14,14 +17,19 @@ const baseConfig = {
   module: {
     rules: [
       {
-        test: /.(js|jsx)$/,
+        test: /.(ts|tsx|js|jsx)$/,
         exclude: /(node_modules)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-env", "@babel/preset-react"]
+        use: [
+          {
+            loader: 'ts-loader'
+          },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
           }
-        }
+        ]
       },
       {
         test: /\.less$/,
@@ -58,9 +66,9 @@ const baseConfig = {
   ],
   devServer: {
     inline: true,
-    open: true,
-   // openPage: '../src/index.html'
+    open: true
+    // openPage: '../src/index.html'
   }
-}
+};
 
 module.exports = baseConfig;
